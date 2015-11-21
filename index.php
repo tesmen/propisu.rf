@@ -48,71 +48,77 @@ include "phrazer.php";
         </a>
     </div>
 
-    <div class="input-group">
-        <div class="input__container">
-            <div id="withNds__popup" style="display: none">
-                Значение после второго десятичного знака будет проигнорировано.
-                <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()">Округлить?</span>
-            </div>
-            <div class="site__description">Сумма с НДС</div>
-            <input id="nds-in" oninput="publishExtractNds(this.value)">
-        </div>
-
-        <div class="input__container">
-            <div id="withOutNds__popup" style="display: none">
-                Значение после второго десятичного знака будет проигнорировано.
-                <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()">Округлить?</span>
-            </div>
-            <div class="site__description">Сумма без НДС</div>
-            <input id="no-nds-in" oninput="publishAddNds(this.value)">
-        </div>
-    </div>
-
     <div class="content">
 
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
-        </div>
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
-        </div>
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
-        </div>
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
-        </div>
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
-        </div>
-        <div class="left__cell" style="vertical-align: bottom">
-            <textarea class="output" id="clipboard_text1"></textarea>
-            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
-                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-            </button>
+        <div class="input-group">
+            <div class="input__container">
+                <div id="withNds__popup" style="display: none">
+                    Значение после второго десятичного знака будет проигнорировано. Округлить?
+                    <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()"></span>
+                </div>
+                <div class="site__description">Сумма с НДС</div>
+                <input id="nds-in" oninput="publishExtractNds(this.value)">
+            </div>
+
+            <div class="input__container">
+                <div id="withOutNds__popup" style="display: none">
+                    Значение после второго десятичного знака будет проигнорировано. Округлить?
+                    <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()"></span>
+                </div>
+                <div class="site__description">Сумма без НДС</div>
+                <input id="no-nds-in" oninput="publishAddNds(this.value)">
+            </div>
         </div>
 
+        <div class="outputs">
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+
+            <div class="left__cell" style="vertical-align: bottom">
+                <textarea class="output" id="clipboard_text1"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                    <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                </button>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
