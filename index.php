@@ -9,9 +9,9 @@ include "phrazer.php";
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="keywords"
-          content="прописью, как выделить НДС, начислить НДС, калькулятор ндс−онлайн,начислить ндс, ндс калькулятор онлайн, ндс онлайн−калькулятор,
-           ндс от суммы, ндс прописью, онлайн прописью, расчет ндс, сумма прописью, цифры прописью, число прописью"/>
+    <meta name="keywords" content="прописью, как выделить НДС, начислить НДС, калькулятор ндс−онлайн,начислить ндс,
+           ндс калькулятор онлайн, ндс онлайн−калькулятор, ндс от суммы, ндс прописью, онлайн прописью, расчет ндс,
+            сумма прописью, цифры прописью, число прописью"/>
     <title>Прописью.РФ - Онлайн сервис помощи бухгалтерам и сотрудникам договорных отделов</title>
 
     <link rel="canonical" href="http://прописью.рф/"/>
@@ -55,7 +55,7 @@ include "phrazer.php";
                     Значение после второго десятичного знака будет проигнорировано. Округлить?
                     <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()"></span>
                 </div>
-                <div class="site__description">Сумма с НДС</div>
+                <div class="summ-input-label">Сумма с НДС</div>
                 <input type="text" id="nds-in" class="summ-input">
             </div>
 
@@ -64,7 +64,7 @@ include "phrazer.php";
                     Значение после второго десятичного знака будет проигнорировано. Округлить?
                     <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()"></span>
                 </div>
-                <div class="site__description">Сумма без НДС</div>
+                <div class="summ-input-label">Сумма без НДС</div>
                 <input type="text" id="no-nds-in" class="summ-input">
             </div>
 

@@ -27,7 +27,7 @@ body {
     position: relative;
     min-height: 100%;
     width: 1000px;
-
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
     margin: 0 auto;
     padding: 0 10px;
 }
@@ -55,6 +55,14 @@ body {
     color: #333;
 }
 
+.summ-input-label {
+    padding: 10px 0;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-size: 12pt;
+    color: #333;
+}
+
 .logo {
     display: inline-block;
     margin: 0;
@@ -70,7 +78,7 @@ body {
 }
 
 .input-group {
-    padding: 15px 0;
+    padding: 25px 0;
 }
 
 .input__container {
@@ -125,6 +133,10 @@ body {
     margin-bottom: 15px;
 }
 
+#tax {
+    width: 80px;
+}
+
 .output {
     width: 85%;
     height: 75px;
@@ -137,7 +149,7 @@ body {
     box-sizing: border-box;
 }
 
-.summ-input-active{
+.summ-input-active {
     box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
 }
 

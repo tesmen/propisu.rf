@@ -1,24 +1,24 @@
 {//vars
     const c_withNds = 'c_withNds';
     const c_noNds = 'c_noNds';
-    var ndsPopup = $("#withNds__popup");
-    var withNdsInput = $("#nds-in");
+    var withNdsPopup = $("#withNds__popup");
     var noNdsPopup = $("#withOutNds__popup");
+    var withNdsInput = $("#nds-in");
     var noNdsInput = $("#no-nds-in");
     var taxInput = $("#tax");
     var lastInput = null;
 }
 
 {//eventListeners
-    $("#nds-in").on('input', function () {
+    withNdsInput.on('input', function () {
         summInputEvent(c_withNds);
     });
 
-    $("#no-nds-in").on('input', function () {
+    noNdsInput.on('input', function () {
         summInputEvent(c_noNds);
     });
 
-    $("#tax").on('input', function () {
+    taxInput.on('input', function () {
         taxInputEvent()
     });
 }
@@ -213,10 +213,10 @@
         var frac = String(getFrac(cleared));
 
         if (frac.length <= 2) {
-            ndsPopup.hide();
+            withNdsPopup.hide();
         }
         if (frac.length > 2) {
-            ndsPopup.show()
+            withNdsPopup.show()
         }
 
         var r = getRoubles(withNds);
