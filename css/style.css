@@ -78,7 +78,7 @@ body {
     position: relative;
 }
 
-.popup__frac {
+.nds-popup {
     display: block;
     position: absolute;
     width: 100%;
@@ -223,4 +223,87 @@ body {
     font-family: 'Open Sans';
     font-weight: bold;
     font-size: 14pt;
+}
+
+#withOutNds__popup {
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    top: -60px;
+    left: 25%;
+    padding: 5px;
+    background: #eee;
+    border-radius: 2px;
+    border: 1px solid #777;
+    box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-family: 'Open Sans';
+    text-align: left;
+    z-index: 10;
+}
+
+#withOutNds__popup:before {
+    content: '';
+    position: inherit;
+    bottom: -12px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background: #eee;
+    z-index: 1;
+    border-radius: 2px;
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+#withNds__popup {
+    position: absolute;
+    width: 250px;
+    height: 75px;
+    top: -60px;
+    left: 25%;
+    padding: 3px;
+    background: #eee;
+    border-radius: 2px;
+    border: 1px solid #777;
+    box-shadow: 0px 5px 3px 0px rgba(0, 0, 0, 0.2);
+    color: #333;
+    font-family: 'Open Sans';
+    text-align: left;
+    z-index: 10;
+}
+
+#withNds__popup:before {
+    content: '';
+    position: inherit;
+    bottom: -12px;
+    left: 25px;
+    width: 20px;
+    height: 20px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    background: #eee;
+    z-index: 1;
+    border-radius: 2px;
+    border-right: 1px solid #777;
+    border-bottom: 1px solid #777;
+    box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.popup__frac {
+    display: block;
+    width: 100%;
+    text-align: center;
+    color: red;
+    cursor: pointer;
+    font-family: 'Open Sans';
+    font-weight: bold;
+    font-size: 18pt;
 }

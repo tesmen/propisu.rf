@@ -51,7 +51,7 @@ include "phrazer.php";
 
         <div class="input-group">
             <div class="input__container">
-                <div id="nds-popup" style="display: none">
+                <div id="withNds__popup" class="popup" style="display: none">
                     Значение после второго десятичного знака будет проигнорировано. Округлить?
                     <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()"></span>
                 </div>
@@ -60,7 +60,7 @@ include "phrazer.php";
             </div>
 
             <div class="input__container">
-                <div id="no-nds-popup" style="display: none">
+                <div id="withOutNds__popup" class="popup" style="display: none">
                     Значение после второго десятичного знака будет проигнорировано. Округлить?
                     <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()"></span>
                 </div>

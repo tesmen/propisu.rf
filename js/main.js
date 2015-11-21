@@ -1,7 +1,7 @@
 {//vars
-    var ndsPopup = $("#nds-popup");
+    var ndsPopup = $("#withNds__popup");
     var ndsInput = $("#nds-in");
-    var noNdsPopup = $("#no-nds-popup");
+    var noNdsPopup = $("#withOutNds__popup");
     var noNdsInput = $("#no-nds-in");
 }
 
@@ -221,7 +221,7 @@ var client = new ZeroClipboard(document.getElementById('copybutton6'));
 
 $(document).ready(function () {
 
-    $("#withNDS").focus()
+    $("#withNDS").focus();
 
     $("#copybutton1").click(function () {
         copySuccess(1);
