@@ -1,6 +1,6 @@
 {//eventListeners
     $("#nds-in").on('input', function () {
-        ndsInputEvent(100)
+        ndsInputEvent()
     });
     $("#no-nds-in").on('input', function () {
         noNdsInputEvent()
@@ -8,7 +8,8 @@
 }
 
 {//procedures
-    function ndsInputEvent(number) {
+    function ndsInputEvent() {
+        var number = $("#nds-in").val();
         clearButtons();
         var summ = clearNum(number);
         var fixed = trimFrac(summ, 2);
@@ -42,7 +43,38 @@
     }
 
     function noNdsInputEvent() {
-        console.log(200)
+        var number = $("#no-nds-in").val();
+
+        clearButtons();
+        var input = clearNum(number);
+
+        $("#withOutNds__frac").text(".." + example(input));
+        var frac = String(getFrac(input));
+        if (frac.length <= 2) {
+            $("#withOutNds__popup").addClass("is__none");
+            $("#withOutNds__popup").removeClass("is__block")
+        }
+        if (frac.length > 2) {
+            $("#withOutNds__popup").addClass("is__block");
+            $("#withOutNds__popup").removeClass("is__none")
+        }
+
+        var fixed = trimFrac(input, 2);
+        var summ = addNds(fixed);
+        $("#withNds").val(summ.toFixed(2))
+        var r = parseInt(summ);
+        var k = getFrac(summ.toFixed(2), 2);
+        var nds = summ - input;
+        var ndsr = parseInt(nds);
+        var ndsk = getFrac(nds.toFixed(2), 2);
+
+        $("#clipboard_text1").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]));
+        $("#clipboard_text2").val(numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)]);
+        $("#clipboard_text3").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
+        $("#clipboard_text4").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
+        $("#clipboard_text5").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
+        $("#clipboard_text6").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
+
 
     }
 }
@@ -116,37 +148,8 @@ function withNdsFix() {
     publishExtractNds(score.toFixed(2));
 }
 function publishExtractNds(number) {
-    }
+}
 
 
 function publishAddNds(number) {
-    clearButtons();
-    var input = clearNum(number);
-
-    $("#withOutNds__frac").text(".." + example(input));
-    var frac = String(getFrac(input));
-    if (frac.length <= 2) {
-        $("#withOutNds__popup").addClass("is__none");
-        $("#withOutNds__popup").removeClass("is__block")
-    }
-    if (frac.length > 2) {
-        $("#withOutNds__popup").addClass("is__block");
-        $("#withOutNds__popup").removeClass("is__none")
-    }
-
-    var fixed = trimFrac(input, 2);
-    var summ = addNds(fixed);
-    $("#withNds").val(summ.toFixed(2))
-    var r = parseInt(summ);
-    var k = getFrac(summ.toFixed(2), 2);
-    var nds = summ - input;
-    var ndsr = parseInt(nds);
-    var ndsk = getFrac(nds.toFixed(2), 2);
-
-    $("#clipboard_text1").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]));
-    $("#clipboard_text2").val(numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)]);
-    $("#clipboard_text3").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
-    $("#clipboard_text4").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
-    $("#clipboard_text5").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
-    $("#clipboard_text6").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(18%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
 }

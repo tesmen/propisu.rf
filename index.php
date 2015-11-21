@@ -56,7 +56,7 @@ include "phrazer.php";
                     <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()"></span>
                 </div>
                 <div class="site__description">Сумма с НДС</div>
-                <input id="nds-in" oninput="publishExtractNds(this.value)">
+                <input id="nds-in">
             </div>
 
             <div class="input__container">
@@ -65,7 +65,7 @@ include "phrazer.php";
                     <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()"></span>
                 </div>
                 <div class="site__description">Сумма без НДС</div>
-                <input id="no-nds-in" oninput="publishAddNds(this.value)">
+                <input id="no-nds-in">
             </div>
         </div>
 
