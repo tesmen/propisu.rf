@@ -1,5 +1,4 @@
-﻿<script>
-var speller = {}
+﻿var speller = {}
 
 speller.clearNum = function(number){
 	var str = String(number);
@@ -11,5 +10,3 @@ speller.clearNum = function(number){
 	if (isNaN(abs)) { return 0;}
 	return abs;
 }
-
-</script>
