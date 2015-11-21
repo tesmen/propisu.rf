@@ -23,6 +23,14 @@
     });
 
     taxInput.on('input', function () {
+        if (taxInput.val() < 0) {
+            taxInput.val(0);
+            return;
+        }
+        if ('' === taxInput.val()) {
+            taxInput.val(0);
+            return;
+        }
         taxInputEvent()
     });
 
@@ -272,25 +280,25 @@
         $("#clipboard_text1").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]));
         $("#clipboard_text2").val(numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)]);
         $("#clipboard_text3").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1])
-            + ", в т.ч. НДС("+ tax+ "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
+            + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
 
         $("#clipboard_text4").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1])
-            + ", в т.ч. НДС("+ tax+ "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. ("
+            + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. ("
             + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
 
         $("#clipboard_text5").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0])
-            + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС("+ tax+ "%) " + triple(ndsr) + "." + fullFill(ndsk)
+            + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
             + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
 
         $("#clipboard_text6").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0])
-            + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС("+ tax+ "%) " + triple(ndsr) + "." + fullFill(ndsk)
+            + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
             + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
     }
 }
 
 function copySuccess(id) {
     for (i = 1; i <= 6; i++) {
-        var fa =$("#fa" + i);
+        var fa = $("#fa" + i);
         $("#copybutton" + i + "-text").text("Скопировать");
         fa.removeClass("fa-clipboard");
         fa.removeClass("fa-files-o");
@@ -305,7 +313,7 @@ function copySuccess(id) {
 function clearButtons() {
     $(".popup").hide();
     for (i = 1; i <= 6; i++) {
-        var fa =$("#fa" + i);
+        var fa = $("#fa" + i);
         $("#copybutton" + i + "-text").text("Скопировать");
         fa.removeClass("fa-clipboard");
         fa.removeClass("fa-files-o");
