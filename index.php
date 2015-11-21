@@ -68,79 +68,50 @@ include "phrazer.php";
     </div>
 
     <div class="content">
-        <table width=100% border=1>
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text1"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                        <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
 
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text2"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton2" data-clipboard-target="clipboard_text2" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa2"></i><br>
-                        <span class="copybutton__text" id="copybutton2__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
+        <div class="left__cell" style="vertical-align: bottom">
+            <textarea class="output" id="clipboard_text1"></textarea>
+            <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
+                <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+            </button>
+        </div>
 
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text3"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton3" data-clipboard-target="clipboard_text3" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa3"></i><br>
-                        <span class="copybutton__text" id="copybutton3__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text4"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton4" data-clipboard-target="clipboard_text4" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa4"></i><br>
-                        <span class="copybutton__text" id="copybutton4__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text5"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton5" data-clipboard-target="clipboard_text5" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa5"></i><br>
-                        <span class="copybutton__text" id="copybutton5__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
-
-            <tr>
-                <td class="left__cell">
-                    <textarea noresize class="output" id="clipboard_text6"></textarea>
-                </td>
-                <td>
-                    <button id="copybutton6" data-clipboard-target="clipboard_text6" class="copybutton">
-                        <i class="fa fa-files-o fa-2x" id="fa6"></i><br>
-                        <span class="copybutton__text" id="copybutton6__text">Скопировать</span>
-                    </button>
-                </td>
-            </tr>
-        </table>
     </div>
 
     <div class="footer">
