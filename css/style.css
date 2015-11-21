@@ -118,6 +118,8 @@ body {
 }
 
 #nds-in,
+#tax,
+#tax-label,
 #no-nds-in {
     font-size: 18pt;
     margin-bottom: 15px;

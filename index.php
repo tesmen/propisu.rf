@@ -10,7 +10,7 @@ include "phrazer.php";
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="keywords"
-          content="прописью, калькулятор ндс−онлайн,начислить ндс, ндс калькулятор онлайн, ндс онлайн−калькулятор,
+          content="прописью, как выделить НДС, начислить НДС, калькулятор ндс−онлайн,начислить ндс, ндс калькулятор онлайн, ндс онлайн−калькулятор,
            ндс от суммы, ндс прописью, онлайн прописью, расчет ндс, сумма прописью, цифры прописью, число прописью"/>
     <title>Прописью.РФ - Онлайн сервис помощи бухгалтерам и сотрудникам договорных отделов</title>
 
@@ -56,7 +56,7 @@ include "phrazer.php";
                     <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()"></span>
                 </div>
                 <div class="site__description">Сумма с НДС</div>
-                <input id="nds-in">
+                <input type="text" id="nds-in">
             </div>
 
             <div class="input__container">
@@ -65,7 +65,12 @@ include "phrazer.php";
                     <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()"></span>
                 </div>
                 <div class="site__description">Сумма без НДС</div>
-                <input id="no-nds-in">
+                <input type="text" id="no-nds-in">
+            </div>
+
+            <div class="input__container">
+                <input type="text" id="tax" size="3" value="18"><span id="tax-label">%</span>
+
             </div>
         </div>
 
