@@ -75,15 +75,21 @@ include "phrazer.php";
         </div>
 
         <div class="outputs">
+            <?php
 
+            for ($i = 1; $i < 6; $i++) {
+                echo <<<EOT
             <div class="left__cell" style="vertical-align: bottom">
-                <textarea class="output" id="clipboard_text1"></textarea>
-                <button id="copybutton1" data-clipboard-target="clipboard_text1" class="copy-button">
+                <textarea class="output" id="clipboard_text$i"></textarea>
+                <button id="copybutton1" data-clipboard-target="clipboard_text$i" class="copy-button">
                     <i class="fa fa-files-o fa-2x" id="fa1"></i><br>
-                    <span class="copybutton__text" id="copybutton1__text">Скопировать</span>
+                    <span class="copybutton__text" id="copybutton$i__text">Скопировать</span>
                 </button>
             </div>
+EOT;
+            }
 
+            ?>
         </div>
     </div>
 
@@ -95,5 +101,6 @@ include "phrazer.php";
 </div>
 <script type="text/javascript" src="js/speller.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="js/copy.js"></script>
 </body>
 </html>

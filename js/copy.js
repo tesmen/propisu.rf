@@ -1,8 +1,5 @@
-var cutTextareaBtn = document.querySelector('.js-textareacutbtn');
-
-cutTextareaBtn.addEventListener('click', function (event) {
-    var cutTextarea = document.querySelector('.js-cuttextarea');
-    cutTextarea.select();
+$('#clipboard_text1').on('click', function (event) {
+    $('#clipboard_text1').select();
 
     try {
         var successful = document.execCommand('copy');
