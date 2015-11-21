@@ -42,7 +42,7 @@ include "phrazer.php";
             <img src="logo.png"/>
 
             <div class="title">
-                <span class="site__title"> ПРОПИСЬЮ.РФ</span><br>
+                <span class="site__title">ПРОПИСЬЮ.РФ</span><br>
                 <span class="site__description"><?= $slogan ?></span>
             </div>
         </a>
