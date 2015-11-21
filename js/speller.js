@@ -1,6 +1,4 @@
-﻿
-
-function triple(number) { // деление на разряды пробелами 132456789 -> 123 456 789
+﻿function triple(number) { // деление на разряды пробелами 132456789 -> 123 456 789
     var val = parseInt(number);
     return getDigits(val).join(" ");
 }

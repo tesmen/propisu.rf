@@ -314,7 +314,6 @@ function clearButtons() {
 }
 
 function withNdsFix() {
-    console.log('withNdsFix');
     var input = withNdsInput.val();
     var score = clearNum(input);
     withNdsInput.val(score.toFixed(2));
@@ -322,7 +321,6 @@ function withNdsFix() {
 }
 
 function noNdsFix() {
-    console.log('noNdsFix');
     var input = noNdsInput.val();
     var score = clearNum(input);
     noNdsInput.val(score.toFixed(2));
