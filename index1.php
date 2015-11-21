@@ -1,4 +1,4 @@
-﻿<head>
+﻿<head xmlns="http://www.w3.org/1999/html">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -39,6 +39,26 @@
                 <span class="site__description"><?= $slogan ?></span>
             </div>
         </a>
+    </div>
+
+    <div class="input-group">
+        <div class="input__container">
+            <div id="withNds__popup" style="display: none">
+                Значение после второго десятичного знака будет проигнорировано.
+                <span class="popup__frac" id="withNds__frac" onclick="withNdsFix()">Округлить?</span>
+            </div>
+            <div class="site__description">Сумма с НДС</div>
+            <input id="nds-in" oninput="publishExtractNds(this.value)">
+        </div>
+
+        <div class="input__container">
+            <div id="withOutNds__popup" style="display: none">
+                Значение после второго десятичного знака будет проигнорировано.
+                <span class="popup__frac" id="withOutNds__frac" onclick="withOutNdsFix()">Округлить?</span>
+            </div>
+            <div class="site__description">Сумма без НДС</div>
+            <input id="no-nds-in" oninput="publishAddNds(this.value)">
+        </div>
     </div>
 
     <div class="content">

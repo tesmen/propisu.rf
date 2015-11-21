@@ -24,8 +24,23 @@ body {
     padding: 0 10px;
 }
 
+.logo {
+    display: inline-block;
+    margin: 0px;
+    height: 50px;
+
+}
+
 .content {
     padding-bottom: 50px;
+}
+.input-group{
+    padding: 15px 0;
+}
+
+.input__container {
+    display: inline-block;
+    position: relative;
 }
 
 .copy-button {
@@ -34,6 +49,13 @@ body {
     vertical-align: middle;
     cursor: pointer;
     height: 74px;
+}
+
+#nds-in,
+#no-nds-in
+{
+    font-size: 18pt;
+    margin-bottom: 15px;
 }
 
 .rollover {
