@@ -288,59 +288,28 @@
     }
 }
 
-var client = new ZeroClipboard(document.getElementById('copybutton1'));
-var client = new ZeroClipboard(document.getElementById('copybutton2'));
-var client = new ZeroClipboard(document.getElementById('copybutton3'));
-var client = new ZeroClipboard(document.getElementById('copybutton4'));
-var client = new ZeroClipboard(document.getElementById('copybutton5'));
-var client = new ZeroClipboard(document.getElementById('copybutton6'));
-
-$(document).ready(function () {
-
-    $("#withNDS").focus();
-
-    $("#copybutton1").click(function () {
-        copySuccess(1);
-    })
-    $("#copybutton2").click(function () {
-        copySuccess(2);
-    })
-    $("#copybutton3").click(function () {
-        copySuccess(3);
-    })
-    $("#copybutton4").click(function () {
-        copySuccess(4);
-    })
-    $("#copybutton5").click(function () {
-        copySuccess(5);
-    })
-    $("#copybutton6").click(function () {
-        copySuccess(6);
-    })
-
-})
-
 function copySuccess(id) {
     for (i = 1; i <= 6; i++) {
-        $("#copybutton" + i + "__text").text("Скопировать");
-        $("#fa" + i).removeClass("fa-clipboard");
-        $("#fa" + i).removeClass("fa-files-o");
-        $("#fa" + i).addClass("fa-files-o");
+        var fa =$("#fa" + i);
+        $("#copybutton" + i + "-text").text("Скопировать");
+        fa.removeClass("fa-clipboard");
+        fa.removeClass("fa-files-o");
+        fa.addClass("fa-files-o");
     }
-    $("#copybutton" + id + "__text").text("Сделано!");
+    $("#copybutton" + id + "-text").text("Сделано!");
     $("#fa" + id).removeClass("fa-files-o");
     $("#fa" + id).addClass("fa-clipboard");
 
 }
 
 function clearButtons() {
-    $(".popup").removeClass("is__block");
-    $(".popup").addClass("is__none");
+    $(".popup").hide();
     for (i = 1; i <= 6; i++) {
-        $("#copybutton" + i + "__text").text("Скопировать");
-        $("#fa" + i).removeClass("fa-clipboard");
-        $("#fa" + i).removeClass("fa-files-o");
-        $("#fa" + i).addClass("fa-files-o");
+        var fa =$("#fa" + i);
+        $("#copybutton" + i + "-text").text("Скопировать");
+        fa.removeClass("fa-clipboard");
+        fa.removeClass("fa-files-o");
+        fa.addClass("fa-files-o");
     }
 }
 
