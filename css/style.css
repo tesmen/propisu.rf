@@ -104,6 +104,7 @@ body {
     vertical-align: top;
     cursor: pointer;
     height: 75px;
+    width: 100px;
     box-sizing: border-box;
 }
 

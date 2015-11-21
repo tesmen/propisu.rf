@@ -21,8 +21,9 @@ include "phrazer.php";
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/speller.js"></script>
     <script type="text/javascript" src="ZeroClipboard.js"></script>
+    <script type="text/javascript" src="js/speller.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
 </head>
