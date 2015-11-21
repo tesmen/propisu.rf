@@ -155,6 +155,11 @@ function withNdsFix(){
 	clearButtons();
 	publishExtractNds(score.toFixed(2));
 }
+
+/**
+ * @deprecated
+ * @param number
+ */
 function publishExtractNds(number){
 	clearButtons();
 	var summ = clearNum(number);
@@ -181,7 +186,10 @@ function publishExtractNds(number){
 	$( "#clipboard_text6" ).val(	triple(r) +"."+fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0]) + fullFill(k) +" "+ money[1][getCase(k)] + ", в т.ч. НДС(18%) " + triple(ndsr)+"."+fullFill(ndsk) + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) +" "+ money[1][getCase(ndsk)] + ")");
 }
 
-
+/**
+ * @deprecated
+ * @param number
+ */
 function publishAddNds(number){
 	clearButtons();
 	var input = clearNum(number);

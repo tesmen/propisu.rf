@@ -7,8 +7,8 @@
     var noNdsInput = $("#no-nds-in");
     var taxInput = $("#tax");
 
-    var fixWithNdsButton = $("withNds__frac");
-    var fixNoNdsButton = $("noNds__frac");
+    var fixWithNdsButton = $("#withNds__frac");
+    var fixNoNdsButton = $("#noNds__frac");
 
     var lastInput = null;
 }
@@ -35,7 +35,7 @@
     });
 }
 
-{//common.js
+{//common.js-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     function getDecimal(num) {
         return (num - parseInt(num))
     }
@@ -179,7 +179,7 @@
     }
 }
 
-{//events
+{//events-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
     function summInputEvent(type) {
         clearButtons();
 
@@ -245,7 +245,7 @@
 
         var input = clearNum(number);
 
-        $("#withOutNds__frac").text(".." + example(input));
+        $("#noNds__frac").text(".." + example(input));
         var frac = String(getFrac(input));
         if (frac.length <= 2) {
             noNdsPopup.hide();
@@ -332,6 +332,7 @@ function copySuccess(id) {
     $("#fa" + id).addClass("fa-clipboard");
 
 }
+
 function clearButtons() {
     $(".popup").removeClass("is__block");
     $(".popup").addClass("is__none");
@@ -342,23 +343,19 @@ function clearButtons() {
         $("#fa" + i).addClass("fa-files-o");
     }
 }
-function noNdsFix() {
-    var input = noNdsInput.val();
-    var score = clearNum(input);
-    noNdsInput.val(score.toFixed(2));
-    publishAddNds(score.toFixed(2));
 
-}
 function withNdsFix() {
+    console.log('withNdsFix');
     var input = withNdsInput.val();
     var score = clearNum(input);
     withNdsInput.val(score.toFixed(2));
-    publishExtractNds(score.toFixed(2));
+    summInputEvent(lastInput);
 }
 
-function publishExtractNds(number) {
-}
-
-
-function publishAddNds(number) {
+function noNdsFix() {
+    console.log('noNdsFix');
+    var input = noNdsInput.val();
+    var score = clearNum(input);
+    noNdsInput.val(score.toFixed(2));
+    summInputEvent(lastInput);
 }
