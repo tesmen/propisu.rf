@@ -6,6 +6,10 @@
     var withNdsInput = $("#nds-in");
     var noNdsInput = $("#no-nds-in");
     var taxInput = $("#tax");
+
+    var fixWithNdsButton = $("withNds__frac");
+    var fixNoNdsButton = $("noNds__frac");
+
     var lastInput = null;
 }
 
@@ -20,6 +24,14 @@
 
     taxInput.on('input', function () {
         taxInputEvent()
+    });
+
+    fixNoNdsButton.on('click', function () {
+        noNdsFix()
+    });
+
+    fixWithNdsButton.on('click', function () {
+        withNdsFix()
     });
 }
 
@@ -330,19 +342,20 @@ function clearButtons() {
         $("#fa" + i).addClass("fa-files-o");
     }
 }
-function withOutNdsFix() {
-    var input = $("#withOutNds").val();
+function noNdsFix() {
+    var input = noNdsInput.val();
     var score = clearNum(input);
-    $("#withOutNds").val(score.toFixed(2));
+    noNdsInput.val(score.toFixed(2));
     publishAddNds(score.toFixed(2));
 
 }
 function withNdsFix() {
-    var input = $("#withNds").val();
+    var input = withNdsInput.val();
     var score = clearNum(input);
-    $("#withNds").val(score.toFixed(2));
+    withNdsInput.val(score.toFixed(2));
     publishExtractNds(score.toFixed(2));
 }
+
 function publishExtractNds(number) {
 }
 
