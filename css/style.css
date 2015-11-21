@@ -78,6 +78,35 @@ body {
     position: relative;
 }
 
+.popup__frac {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 75px;
+    top: -75px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
+    font-family: 'Open Sans';
+    font-weight: 100;
+    font-size: 12pt;
+    color: #333;
+    border: 1px solid green;
+}
+
+.frac__arrow {
+    display: block;
+    position: absolute;
+    box-sizing: border-box;
+    bottom: -40px;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    border: 40px solid transparent;
+    border-top-color: white;
+    border-bottom: 0;
+    text-shadow: 1px 1px 2px black, 0 0 1em red;
+}
+
 .left__cell {
     display: inline-block;
     width: 100%;
