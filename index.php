@@ -1,4 +1,10 @@
-﻿<head xmlns="http://www.w3.org/1999/html">
+﻿<!DOCTYPE html>
+
+<?php
+//header("location: shutdown.php");
+include "phrazer.php";
+?>
+<head xmlns="http://www.w3.org/1999/html">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
