@@ -21,7 +21,6 @@ include "phrazer.php";
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="ZeroClipboard.js"></script>
 
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
@@ -106,13 +105,29 @@ EOT;
 
             ?>
         </div>
+
+        <div class="vk_zone">
+            <div id="vk_like" class="vk_like"></div>
+
+            <script type="text/javascript">
+                VK.Widgets.Like("vk_like", {type: "button"});
+            </script>
+
+            <!--        <span class="vk_feedback">Ниже можно оставить замечания и пожелания по работе сервиса. Стена регулярно просматривается.</span>-->
+
+            <div id="vk_comments"></div>
+            <script type="text/javascript">
+                VK.Widgets.Comments("vk_comments", {limit: 10, attach: "*"});
+            </script>
+        </div>
+
+        <div class="footer">
+            <a href="http://tesmen.co/">
+                <p class="footer__text">Tesmen.co &nbsp 2015</p>
+            </a>
+        </div>
     </div>
 
-    <div class="footer">
-        <a href="http://tesmen.co/">
-            <p class="footer__text">Tesmen.co &nbsp 2015</p>
-        </a>
-    </div>
 </div>
 <script type="text/javascript" src="js/speller.js"></script>
 <script type="text/javascript" src="js/main.js"></script>

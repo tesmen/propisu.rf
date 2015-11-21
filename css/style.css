@@ -1,4 +1,4 @@
-@font-face {
+﻿@font-face {
     font-family: 'Open Sans';
     src: url(/fonts/OpenSans-CondLight.ttf);
     font-weight: normal;
@@ -219,6 +219,10 @@ body {
     -ms-transition: 0.2s ease-in-out;
     transition: 0.2s ease-in-out;
     cursor: pointer;
+}
+
+.vk_like{
+    margin: 10px auto;
 }
 
 .footer {
