@@ -1,22 +1,4 @@
-﻿function addNds(number, tax) {
-    if (number == "" || isNaN(number)) {
-        return 0;
-    }
-    (tax === undefined ? tax = 18 : "")
-    var full = parseFloat(number);
-    var nds = full * (1 + tax / 100);
-    return nds;
-}
-
-function extractNds(number, tax) {
-    if (number == "" || isNaN(number)) {
-        return 0;
-    }
-    (tax === undefined ? tax = 18 : "")
-    var full = parseFloat(number);
-    var nds = -((full / (1 + tax / 100)) - full);
-    return nds;
-}
+﻿
 
 function triple(number) { // деление на разряды пробелами 132456789 -> 123 456 789
     var val = parseInt(number);

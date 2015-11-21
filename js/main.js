@@ -1,18 +1,25 @@
 {//vars
+    const c_withNds = 'c_withNds';
+    const c_noNds = 'c_noNds';
     var ndsPopup = $("#withNds__popup");
-    var ndsInput = $("#nds-in");
+    var withNdsInput = $("#nds-in");
     var noNdsPopup = $("#withOutNds__popup");
     var noNdsInput = $("#no-nds-in");
+    var taxInput = $("#tax");
+    var lastInput = null;
 }
 
 {//eventListeners
     $("#nds-in").on('input', function () {
-        clearButtons();
-        ndsInputEvent()
+        summInputEvent(c_withNds);
     });
+
     $("#no-nds-in").on('input', function () {
-        clearButtons();
-        noNdsInputEvent()
+        summInputEvent(c_noNds);
+    });
+
+    $("#tax").on('input', function () {
+        taxInputEvent()
     });
 }
 
@@ -139,11 +146,65 @@
                 break;
         }
     }
+
+    function extractNds(number, tax) {
+        if (number == "" || isNaN(number)) {
+            return 0;
+        }
+        (tax === undefined ? tax = 18 : "")
+        var full = parseFloat(number);
+        return -((full / (1 + tax / 100)) - full);
+    }
+
+    function addNds(number, tax) {
+        if (number == "" || isNaN(number)) {
+            return 0;
+        }
+        (tax === undefined ? tax = 18 : "")
+        var full = parseFloat(number);
+        var nds = full * (1 + tax / 100);
+        return nds;
+    }
 }
 
 {//events
+    function summInputEvent(type) {
+        clearButtons();
+
+        switch (type) {
+            case c_withNds:
+                noNdsInput.removeClass('summ-input-active');
+                withNdsInput.addClass('summ-input-active');
+                lastInput = type;
+                ndsInputEvent();
+                break;
+            case c_noNds:
+                noNdsInput.addClass('summ-input-active');
+                withNdsInput.removeClass('summ-input-active');
+                lastInput = type;
+                noNdsInputEvent();
+                break;
+        }
+    }
+
+    function taxInputEvent() {
+        switch (lastInput) {
+            case c_withNds:
+                ndsInputEvent();
+
+                break;
+            case c_noNds:
+                noNdsInputEvent();
+
+                break;
+            default:
+                return;
+                break;
+        }
+    }
+
     function ndsInputEvent() {
-        var input = ndsInput.val();
+        var input = withNdsInput.val();
 
         var cleared = clearNum(input);
         var withNds = trimFrac(cleared, 2);
@@ -160,7 +221,7 @@
 
         var r = getRoubles(withNds);
         var k = getKopecks(withNds);
-        var nds = extractNds(withNds);
+        var nds = extractNds(withNds, taxInput.val());
         noNdsInput.val((withNds - nds).toFixed(2));
         var ndsr = getRoubles(nds);
         var ndsk = getKopecks(nds.toFixed(2));
@@ -182,8 +243,8 @@
         }
 
         var fixed = trimFrac(input, 2);
-        var summ = addNds(fixed);
-        ndsInput.val(summ.toFixed(2))
+        var summ = addNds(fixed, taxInput.val());
+        withNdsInput.val(summ.toFixed(2));
         var r = parseInt(summ);
         var k = getFrac(summ.toFixed(2), 2);
         var nds = summ - input;
@@ -193,6 +254,9 @@
     }
 
     function fillTextAreas(r, k, ndsr, ndsk) {
+        var tax = taxInput.val();
+
+
         $("#clipboard_text1").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]));
         $("#clipboard_text2").val(numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)]);
         $("#clipboard_text3").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1])
@@ -270,7 +334,6 @@ function withOutNdsFix() {
     var input = $("#withOutNds").val();
     var score = clearNum(input);
     $("#withOutNds").val(score.toFixed(2));
-    clearButtons();
     publishAddNds(score.toFixed(2));
 
 }
@@ -278,7 +341,6 @@ function withNdsFix() {
     var input = $("#withNds").val();
     var score = clearNum(input);
     $("#withNds").val(score.toFixed(2));
-    clearButtons();
     publishExtractNds(score.toFixed(2));
 }
 function publishExtractNds(number) {
