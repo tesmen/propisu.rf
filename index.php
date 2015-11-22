@@ -79,7 +79,7 @@ include "phrazer.php";
             for ($i = 1; $i < 7; $i++) {
                 echo <<<EOT
             <div class="left__cell" style="vertical-align: bottom">
-                <textarea class="output" id="clipboard_text$i"></textarea>
+                <textarea readonly class="output" id="clipboard_text$i"></textarea>
                 <button id="copybutton$i" data-clipboard-target="clipboard_text$i" class="copy-button">
                     <i class="fa fa-files-o fa-2x" id="fa$i"></i><br>
                     <span class="copybutton__text" id="copybutton$i-text">Скопировать</span>
