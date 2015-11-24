@@ -189,7 +189,7 @@
         }
 
         var full = parseFloat(number);
-        var nds = full * (1 + tax / 100);
+        var nds = (full * (1 + tax / 100)).toFixed(2);
         return nds;
     }
 }
@@ -271,9 +271,9 @@
 
         var fixed = trimFrac(input, 2);
         var summ = addNds(fixed, taxInput.val());
-        withNdsInput.val(summ.toFixed(2));
+        withNdsInput.val(summ);
         var r = parseInt(summ);
-        var k = getFrac(summ.toFixed(2), 2);
+        var k = getFrac(summ, 2);
         var nds = summ - input;
         var ndsr = getRoubles(nds);
         var ndsk = getKopecks(nds.toFixed(2));
