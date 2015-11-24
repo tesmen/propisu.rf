@@ -73,6 +73,9 @@ include "phrazer.php";
                 <input type="text" id="no-nds-in" class="summ-input">
             </div>
 
+            <div class="input__container" style="width:100px">
+            </div>
+
             <div class="input__container">
                 <div class="summ-input-label">НДС (%)</div>
 
