@@ -26,7 +26,7 @@ include "phrazer.php";
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
     <?php
-    include "yandex_counter.inc";
+    @include "yandex_counter.inc";
     ?>
 </head>
 
@@ -74,7 +74,7 @@ include "phrazer.php";
             </div>
 
             <div class="input__container">
-                <div class="summ-input-label">%</div>
+                <div class="summ-input-label">НДС (%)</div>
 
                 <input type="number" id="tax" size="3" value="18" min="0">
             </div>
