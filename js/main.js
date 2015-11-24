@@ -33,19 +33,20 @@
             taxInput.val(0);
             return;
         }
-        taxInputEvent()
+        rememberTaxBoxEvent();
+        taxInputEvent();
     });
 
     fixNoNdsButton.on('click', function () {
-        noNdsFix()
+        noNdsFix();
     });
 
     fixWithNdsButton.on('click', function () {
-        withNdsFix()
+        withNdsFix();
     });
 
     rememberTax.on('change', function () {
-        rememberTaxEvent()
+        rememberTaxBoxEvent();
     });
 }
 
@@ -301,12 +302,32 @@
             + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
     }
 
-    function rememberTaxEvent() {
-        console.log(100);
-        $.cookie('cookie_name', 'cookie_value');
+    function rememberTaxBoxEvent() {
+        switch (rememberTax.prop('checked')){
+            case true:
+                $.cookie('user_tax', parseInt(taxInput.val()));
+                break;
+            case false:
+                $.removeCookie('user_tax'); // => true
+                break;
+        }
+    }
+
+    function ignition() {
+        if(undefined == $.cookie('user_tax')){
+            return;
+        }
+
+        taxInput.val($.cookie('user_tax'));
+        rememberTax.attr('checked', true);
     }
 }
 
+/**
+ * not deprecated!
+ * calls from loop in index.php
+ * @param id
+ */
 function copySuccess(id) {
     for (i = 1; i <= 6; i++) {
         var fa = $("#fa" + i);
@@ -345,3 +366,7 @@ function noNdsFix() {
     noNdsInput.val(score.toFixed(2));
     summInputEvent(lastInput);
 }
+
+$(document).ready(function () {
+    ignition();
+});
