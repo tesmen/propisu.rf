@@ -4,6 +4,7 @@
 //header("location: shutdown.php");
 include "phrazer.php";
 ?>
+
 <head xmlns="http://www.w3.org/1999/html">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta charset="UTF-8"/>
@@ -20,8 +21,7 @@ include "phrazer.php";
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
 </head>
@@ -69,7 +69,10 @@ include "phrazer.php";
 
             <div class="input__container">
                 <input type="number" id="tax" size="3" value="18" min="0"><span id="tax-label">%</span>
+            </div>
 
+            <div class="input__container">
+                <button id="remember-tax-switch">Сохранить</button>
             </div>
         </div>
 
