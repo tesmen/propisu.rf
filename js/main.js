@@ -178,7 +178,7 @@
         if (number == "" || isNaN(number)) {
             return 0;
         }
-        (tax === undefined ? tax = 18 : "")
+
         var full = parseFloat(number);
         return -((full / (1 + tax / 100)) - full);
     }
@@ -275,6 +275,8 @@
         var r = parseInt(summ);
         var k = getFrac(summ.toFixed(2), 2);
         var nds = summ - input;
+        console.log(summ);
+        console.log(input);
         var ndsr = getRoubles(nds);
         var ndsk = getKopecks(nds.toFixed(2));
         fillTextAreas(r, k, ndsr, ndsk)
