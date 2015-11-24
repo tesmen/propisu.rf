@@ -1,7 +1,6 @@
 ﻿<!DOCTYPE html>
 
 <?php
-//header("location: shutdown.php");
 include "phrazer.php";
 ?>
 
@@ -26,6 +25,9 @@ include "phrazer.php";
     <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
+    <?php
+    include "yandex_counter.inc";
+    ?>
 </head>
 
 <html>
