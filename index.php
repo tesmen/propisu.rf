@@ -18,6 +18,7 @@ include "phrazer.php";
     <link rel="canonical" href="http://прописью.рф/"/>
     <link rel="stylesheet" href="css/reset.css?v=1"/>
     <link rel="stylesheet" href="css/style.css?v=1"/>
+    <link rel="stylesheet" href="css/checkbox.css?v=1"/>
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
@@ -68,11 +69,17 @@ include "phrazer.php";
             </div>
 
             <div class="input__container">
-                <input type="number" id="tax" size="3" value="18" min="0"><span id="tax-label">%</span>
+                <div class="summ-input-label">%</div>
+                <input type="number" id="tax" size="3" value="18" min="0">
             </div>
 
             <div class="input__container">
-                <button id="remember-tax-switch">Сохранить</button>
+                <div class="summ-input-label">Запомнить?</div>
+                <div class="flatCheckbox ">
+                    <input type="checkbox" value="1" id="flatOneCheckbox" name="">
+                    <label for="flatOneCheckbox"></label>
+                    <div></div>
+                </div>
             </div>
         </div>
 

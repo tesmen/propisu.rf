@@ -150,7 +150,7 @@ body {
 }
 
 .summ-input-active {
-    box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.50);
 }
 
 .copy-button {
@@ -221,7 +221,7 @@ body {
     cursor: pointer;
 }
 
-.vk_like{
+.vk_like {
     margin: 10px auto;
 }
 

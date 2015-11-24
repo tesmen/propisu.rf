@@ -1,0 +1,69 @@
+/**
+ * Start by hiding the checkboxes
+ */
+input[type=checkbox] {
+    visibility: hidden;
+}
+
+div.flatCheckbox
+{
+    vertical-align: top;
+    width: 62px;
+    height: 28px;
+    position: relative;
+    /*border: 1px solid black;*/
+}
+.flatCheckbox div
+{
+    border-radius: 3px;
+    width: 100%;
+    height: 32px;
+    background: #736d6c;
+    position: relative;
+    top:-28px;
+
+    -moz-box-shadow:    inset 0 0 3px #000000;
+    -webkit-box-shadow: inset 0 0 3px #000000;
+    box-shadow:         inset 0 0 3px #000000;
+}
+.flatCheckbox label
+{
+    display: block;
+    width: 29px;
+    height: 28px;
+
+    border-radius: 3px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: -8px;
+    z-index: 1;
+    left: 3px;
+    background: #fffffd;
+}
+.flatCheckbox label:before
+{
+    color: #ccc;
+    content:'|||';
+    font-size: 15px;
+    letter-spacing: 1px;
+    position: absolute;
+    left: 7px;
+    top: 3px;
+}
+.flatCheckbox input[type=checkbox]:checked ~ div
+{
+    background: #5e0000;
+}
+
+.flatCheckbox input[type=checkbox]:checked ~ label {
+    left: 30px;
+}
+
+.inner-shadow {
+
+}
