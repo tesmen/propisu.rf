@@ -5,7 +5,9 @@
     var noNdsPopup = $("#withOutNds__popup");
     var withNdsInput = $("#nds-in");
     var noNdsInput = $("#no-nds-in");
+
     var taxInput = $("#tax");
+    var rememberTax = $("#remember_tax");
 
     var fixWithNdsButton = $("#withNds__frac");
     var fixNoNdsButton = $("#noNds__frac");
@@ -40,6 +42,10 @@
 
     fixWithNdsButton.on('click', function () {
         withNdsFix()
+    });
+
+    rememberTax.on('change', function () {
+        rememberTaxEvent()
     });
 }
 
@@ -293,6 +299,11 @@
         $("#clipboard_text6").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0])
             + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
             + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
+    }
+
+    function rememberTaxEvent() {
+        console.log(100);
+        $.cookie('cookie_name', 'cookie_value');
     }
 }
 

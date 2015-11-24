@@ -23,6 +23,7 @@ include "phrazer.php";
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script type="text/javascript" src="js/jquery.cookie.js"></script>
     <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
     <script type="text/javascript">VK.init({apiId: 4886226, onlyWidgets: true});</script>
 </head>
@@ -56,6 +57,7 @@ include "phrazer.php";
                     <span class="popup__frac" id="withNds__frac"></span>
                 </div>
                 <div class="summ-input-label">Сумма с НДС</div>
+
                 <input type="text" id="nds-in" class="summ-input">
             </div>
 
@@ -65,19 +67,23 @@ include "phrazer.php";
                     <span class="popup__frac" id="noNds__frac"></span>
                 </div>
                 <div class="summ-input-label">Сумма без НДС</div>
+
                 <input type="text" id="no-nds-in" class="summ-input">
             </div>
 
             <div class="input__container">
                 <div class="summ-input-label">%</div>
+
                 <input type="number" id="tax" size="3" value="18" min="0">
             </div>
 
             <div class="input__container">
                 <div class="summ-input-label">Запомнить?</div>
+
                 <div class="flatCheckbox ">
-                    <input type="checkbox" value="1" id="flatOneCheckbox" name="">
-                    <label for="flatOneCheckbox"></label>
+                    <input type="checkbox" value="1" id="remember_tax" name="">
+                    <label for="remember_tax"></label>
+
                     <div></div>
                 </div>
             </div>
