@@ -156,7 +156,7 @@ body {
 }
 
 .summ-input-active {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.50);
+    box-shadow: 0 0 15px rgba(91,127,166, 0.76);
 }
 
 .input-group, .input__container {
