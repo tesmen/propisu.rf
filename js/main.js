@@ -187,7 +187,7 @@
         if (number == "" || isNaN(number)) {
             return 0;
         }
-        (tax === undefined ? tax = 18 : "")
+
         var full = parseFloat(number);
         var nds = full * (1 + tax / 100);
         return nds;
