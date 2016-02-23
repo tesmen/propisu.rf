@@ -205,6 +205,7 @@
                 lastInput = type;
                 ndsInputEvent();
                 break;
+
             case c_noNds:
                 noNdsInput.addClass('summ-input-active');
                 withNdsInput.removeClass('summ-input-active');
@@ -218,12 +219,12 @@
         switch (lastInput) {
             case c_withNds:
                 ndsInputEvent();
-
                 break;
+
             case c_noNds:
                 noNdsInputEvent();
-
                 break;
+
             default:
                 return;
                 break;
