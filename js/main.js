@@ -1,7 +1,9 @@
 {//vars
     var c_withNds = 'c_withNds';
     var c_noNds = 'c_noNds';
+
     var withNdsPopup = $("#withNds__popup");
+    var copyButtons = $(".copy-button");
     var noNdsPopup = $("#withOutNds__popup");
     var withNdsInput = $("#nds-in");
     var noNdsInput = $("#no-nds-in");
@@ -16,6 +18,10 @@
 }
 
 {//eventListeners
+    copyButtons.on('click', function () {
+        registerClick();
+    });
+
     withNdsInput.on('input', function () {
         summInputEvent(c_withNds);
     });
@@ -288,23 +294,23 @@
         $("#clipboard_text1").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1]));
         $("#clipboard_text2").val(numToText(r, 0, "text", money[0]) + fullFill(k) + " " + money[1][getCase(k)]);
         $("#clipboard_text3").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1])
-            + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
+        + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб.");
 
         $("#clipboard_text4").val(numToText(r, 0, "text", money[0]) + numToText(k, 1, "text", money[1])
-            + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. ("
-            + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
+        + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk) + " руб. ("
+        + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
 
         $("#clipboard_text5").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0])
-            + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
-            + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
+        + numToText(k, 1, "text", money[1]) + "), в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
+        + " руб. (" + numToText(ndsr, 0, "text", money[0]) + numToText(ndsk, 1, "text", money[1]) + ")");
 
         $("#clipboard_text6").val(triple(r) + "." + fullFill(k) + " руб. (" + numToText(r, 0, "text", money[0])
-            + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
-            + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
+        + fullFill(k) + " " + money[1][getCase(k)] + ", в т.ч. НДС(" + tax + "%) " + triple(ndsr) + "." + fullFill(ndsk)
+        + " руб. " + numToText(ndsr, 0, "text", money[0]) + fullFill(ndsk) + " " + money[1][getCase(ndsk)] + ")");
     }
 
     function rememberTaxBoxEvent() {
-        switch (rememberTax.prop('checked')){
+        switch (rememberTax.prop('checked')) {
             case true:
                 $.cookie('user_tax', parseInt(taxInput.val()));
                 break;
@@ -315,7 +321,7 @@
     }
 
     function ignition() {
-        if(undefined == $.cookie('user_tax')){
+        if (undefined == $.cookie('user_tax')) {
             return;
         }
 
@@ -341,6 +347,17 @@ function copySuccess(id) {
     $("#fa" + id).removeClass("fa-files-o");
     $("#fa" + id).addClass("fa-clipboard");
 
+}
+
+function registerClick() {
+    $.ajax({
+        url: "register.php",
+        type: "POST",
+        data: {
+            withNds: withNdsInput.val(),
+            noNds: noNdsInput.val()
+        }
+    });
 }
 
 function clearButtons() {
