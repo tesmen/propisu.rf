@@ -15,9 +15,9 @@ include "phrazer.php";
     <title>Прописью.РФ - Онлайн сервис помощи бухгалтерам и сотрудникам договорных отделов</title>
 
     <link rel="canonical" href="http://прописью.рф/"/>
-    <link rel="stylesheet" href="css/reset.css?v=1"/>
-    <link rel="stylesheet" href="css/style.css?v=1"/>
-    <link rel="stylesheet" href="css/checkbox.css?v=1"/>
+    <link rel="stylesheet" href="css/reset.css?v=2"/>
+    <link rel="stylesheet" href="css/style.css?v=2"/>
+    <link rel="stylesheet" href="css/checkbox.css?v=2"/>
     <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
