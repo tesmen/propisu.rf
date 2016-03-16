@@ -1,6 +1,6 @@
 {//vars
-    const c_withNds = 'c_withNds';
-    const c_noNds = 'c_noNds';
+    var c_withNds = 'c_withNds';
+    var c_noNds = 'c_noNds';
     var withNdsPopup = $("#withNds__popup");
     var noNdsPopup = $("#withOutNds__popup");
     var withNdsInput = $("#nds-in");
