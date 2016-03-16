@@ -355,7 +355,8 @@ function registerClick() {
         type: "POST",
         data: {
             withNds: withNdsInput.val(),
-            noNds: noNdsInput.val()
+            noNds: noNdsInput.val(),
+            tax: taxInput.val()
         }
     });
 }
