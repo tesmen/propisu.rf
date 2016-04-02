@@ -2,7 +2,7 @@
 
 $client_id = '5387412'; // ID приложения
 $client_secret = 'm8kU9FlWTEwAMJhqL79E'; // Защищённый ключ
-$redirect_uri = 'http://tesmen.co/vk_auth.php'; // Адрес сайта
+$redirect_uri = 'http://прописью.рф/vk-auth'; // Адрес сайта
 $authUrl = 'http://oauth.vk.com/authorize';
 
 $params = [
